@@ -1,7 +1,11 @@
 ## Overview
 
 - Project created using: start.spring.io
-- TO replicate with start.spring.io, use this [custom link](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.3.1&packaging=war&jvmVersion=22&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=data-jpa,web,h2)
+- To replicate how this project was created with start.spring.io, use this [custom link](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.3.1&packaging=war&jvmVersion=22&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=data-jpa,web,h2)
+- default implementation under JPA interface is Hibernate imported via jakarta.persistence package from spring-boot-starter-data-jpa dependency
+- apachet tomcat is used as a web container (from spring-boot-starter-web)
+- in-memory database is provided by com.h2database (Note: database will be arased after process is stopped).
+- maven binaries are present in the root, no need for local maven install
 
 # How to run
 
@@ -10,10 +14,58 @@
 # How to test
 
 - see all employees: visit [localhost:8080/](http://localhost:8080/api/employees)
-- add employee 1 `curl -X POST http://localhost:8080/api/employees \\n-H "Content-Type: application/json" \\n-d '{\n  "name": "John Doe",\n  "position": "Software Engineer",\n  "salary": 60000\n}'`
-- add employee 2 `curl -X POST http://localhost:8080/api/employees \\n-H "Content-Type: application/json" \\n-d '{\n  "name": "Jane Smith",\n  "position": "Project Manager",\n  "salary": 85000\n}'\`
-- add employee 3 `curl -X POST http://localhost:8080/api/employees \\n-H "Content-Type: application/json" \\n-d '{\n  "name": "Jane Smith",\n  "position": "Project Manager",\n  "salary": 85000\n}'\`
-- delete employee 3`curl -X DELETE http://localhost:8080/api/employees/3\n`
-- change name of employee 2 `curl -X PUT http://localhost:8080/api/employees/2 \\n-H "Content-Type: application/json" \\n-d '{\n  "name": "Lisa Smith",\n  "position": "Project Manager",\n  "salary": 85000\n}'\n`
+- add employee 1
 
-Note: database will be arased after process is stopped.
+```bash
+curl -X POST http://localhost:8080/api/employees \
+-H "Content-Type: application/json" \
+-d '{
+  "name": "John Doe",
+  "position": "Software Engineer",
+  "salary": 60000
+}'
+
+```
+
+- add employee 2
+
+```bash
+curl -X POST http://localhost:8080/api/employees \
+-H "Content-Type: application/json" \
+-d '{
+  "name": "Janet Smith",
+  "position": "Software Engineer",
+  "salary": 60000
+}'
+
+```
+
+- add employee 3
+
+```bash
+curl -X POST http://localhost:8080/api/employees \
+-H "Content-Type: application/json" \
+-d '{
+  "name": "John Doe",
+  "position": "Software Engineer",
+  "salary": 60000
+}'
+```
+
+- delete employee 3
+
+```bash
+curl -X DELETE http://localhost:8080/api/employees/3
+```
+
+- change name of employee 2
+
+```bash
+curl -X PUT http://localhost:8080/api/employees/2 \
+-H "Content-Type: application/json" \
+-d '{
+  "name": "Lisa Smith",
+  "position": "Project Manager",
+  "salary": 85000
+}'
+```
