@@ -4,7 +4,7 @@
 - To replicate how this project was created with start.spring.io, use this [custom link](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.3.1&packaging=war&jvmVersion=22&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=data-jpa,web,h2)
 - default implementation under JPA interface is Hibernate imported via jakarta.persistence package from spring-boot-starter-data-jpa dependency
 - apachet tomcat is used as a web container (from spring-boot-starter-web)
-- in-memory database is provided by com.h2database (Note: database will be arased after process is stopped).
+- in-memory database is provided by com.h2database (Note: database will be erased after process is stopped).
 - maven binaries are present in the root, no need for local maven install
 
 # How to run
