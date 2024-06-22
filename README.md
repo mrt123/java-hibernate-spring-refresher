@@ -9,7 +9,7 @@
 
 # How to run
 
-- `./mvnw spring-boot:run`
+- after cloning this repo, run: `./mvnw spring-boot:run`
 
 # How to test
 
